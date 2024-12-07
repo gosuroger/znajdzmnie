@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Form Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/originals/2f/64/3a/2f643a53598781f6deb8ff56d70a266a.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            font-size: 3rem;
+            color: red;
+            font-family: 'Creepster', cursive;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: red;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">01.2345, 67.XXXXX</div>
+        <form class="form" id="redirectForm">
+            <input type="text" id="field1" placeholder="Czy" maxlength="5" required>
+            <input type="text" id="field2" placeholder="rozwiążesz" maxlength="5" required>
+            <input type="text" id="field3" placeholder="zagadkę?" maxlength="5" required>
+            <button type="button" onclick="generateLink()">Spróbuj Szczęścia</button>
+        </form>
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function generateLink() {
+            const field1 = document.getElementById('field1').value;
+            const field2 = document.getElementById('field2').value;
+            const field3 = document.getElementById('field3').value;
+
+            if (field1 && field2 && field3) {
+                const url = `https://tiny.cc/${field1}${field2}${field3}`;
+                window.location.href = url;
+            } else {
+                alert('Nie tak to miało wyglądać. Zagadka źle rozwiązana. Wypełnij wszystkie pola!');
+            }
+        }
+    </script>
+</body>
+</html>
