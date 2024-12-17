@@ -1,0 +1,1 @@
+NIE TĘDY DROGA!
