@@ -14,17 +14,21 @@
         a.custom-link:hover {
             color: lightgray;
         }
+
         body {
             margin: 0;
             padding: 0;
             background: url('https://i.pinimg.com/originals/2f/64/3a/2f643a53598781f6deb8ff56d70a266a.jpg') no-repeat center center fixed;
             background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             color: white;
             font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
 
         .container {
@@ -33,6 +37,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
         }
 
         .title {
@@ -69,19 +74,64 @@
         button:hover {
             background: darkred;
         }
+
+        video {
+            max-width: 90%;
+            border: 5px solid red;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .image-list img {
+            max-width: 90%;
+            border-radius: 10px;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="title">01.XXX5, 67.89012</div>
-        <form class="form" id="redirectForm">
-            <input type="text" id="field1" placeholder="XXX" maxlength="3" required>
-            <input type="text" id="field2" placeholder="XXX" maxlength="3" required>
-            <input type="text" id="field3" placeholder="XXX" maxlength="3" required>
-            <button type="button" onclick="generateLink()" title="JIGSAW: Want to play a little game? Find me, but be careful what you type. Random things can redirect you to dangerous places!">Spróbuj Szczęścia</button>
-            <a class="custom-link" href="mailto:gosuroger@gmail.com?subject=POTRZEBNA%20POMOC&body=Oto%20nasze%20pytanie:">Jedna podpowiedź / dzień</a>
-        </form>
+    <div class="main-content">
+        <!-- Wideo -->
+        <video controls autoplay>
+            <source src="FailFinal.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Lista zdjęć -->
+        <div class="image-list">
+            <img src="sol1.jpg" alt="1">
+            <img src="sol2.jpg" alt="2">
+            <img src="sol3.jpg" alt="3">
+            <img src="sol4.jpg" alt="4">
+            <img src="sol5.jpg" alt="5">
+            <img src="sol6.jpg" alt="6">
+            <img src="sol7.jpg" alt="7">
+            <img src="sol8.jpg" alt="8">
+            <img src="sol9.jpg" alt="9">
+            <img src="sol10.jpg" alt="10">  
+        </div>
+
+        <!-- Formularz -->
+        <div class="container">
+            <div class="title">01.XXX5, 67.89012</div>
+            <form class="form" id="redirectForm">
+                <input type="text" id="field1" placeholder="XXX" maxlength="3" required>
+                <input type="text" id="field2" placeholder="XXX" maxlength="3" required>
+                <input type="text" id="field3" placeholder="XXX" maxlength="3" required>
+                <button type="button" onclick="generateLink()" title="JIGSAW: Want to play a little game? Find me, but be careful what you type. Random things can redirect you to dangerous places!">Spróbuj Szczęścia</button>
+                <a class="custom-link" href="mailto:gosuroger@gmail.com?subject=POTRZEBNA%20POMOC&body=Oto%20nasze%20pytanie:">Jedna podpowiedź / dzień</a>
+            </form>
+        </div>
     </div>
 
     <audio autoplay loop>
